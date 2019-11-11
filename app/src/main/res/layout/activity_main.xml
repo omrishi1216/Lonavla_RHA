@@ -42,9 +42,9 @@
             android:id="@+id/guest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:layout_below="@+id/guest_icon"
             android:layout_centerHorizontal="true"
+            android:clickable="true"
             android:text="Guest"
             android:textColor="#000000"
             android:textSize="30dp" />
@@ -72,9 +72,9 @@
             android:id="@+id/rho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:layout_below="@+id/rho_icon"
             android:layout_centerHorizontal="true"
+            android:clickable="true"
             android:text="RHO Member"
             android:textColor="#000000"
             android:textSize="30dp" />
