@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".first_screen_si"></activity>
+        <activity android:name=".first_screen_wsi" />
+        <activity android:name=".rho_signup" />
+        <activity android:name=".guest_signup" />
+        <activity android:name=".rho_login" />
+        <activity android:name=".guest_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

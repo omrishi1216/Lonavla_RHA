@@ -1,44 +1,56 @@
 package com.example.lonavlarha;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView bigrecycler;
+    private boolean isAppInitiated;
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser currentUser = mAuth.getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        ArrayList<MyModel> upperdata = fill_with_data();
-
-        bigrecycler = findViewById(R.id.up);
-        MyAdapter adapter = new MyAdapter(upperdata);
-        bigrecycler.setAdapter(adapter);
-        bigrecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-    }
-        public ArrayList<MyModel> fill_with_data(){
-
-
-            ArrayList<MyModel> upperdata = new ArrayList<>();
-
-            upperdata.add(new MyModel(R.drawable.image1));
-            upperdata.add(new MyModel(R.drawable.image2));
-            upperdata.add(new MyModel(R.drawable.image3));
-
-
-            return upperdata;
-
-
+        if(currentUser == null){
+            not_intiated();
+        }else {
+            initiated();
         }
 
+    }
+
+    private void initiated(){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent splashIntent = new Intent(MainActivity.this,first_screen_si.class);
+                startActivity(splashIntent);
+                finish();
+            }
+        },500);
+    }
+
+    private void not_intiated(){
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent splashIntent = new Intent(MainActivity.this,first_screen_wsi.class);
+                startActivity(splashIntent);
+                finish();
+            }
+        },500);
+
+        isAppInitiated = true;
 
     }
+}
