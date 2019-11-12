@@ -22,7 +22,7 @@ public class guest_signup extends AppCompatActivity {
     EditText password_guest;
     EditText name_guest;
     Button login_button;
-    TextView signup_text;
+    TextView signin_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class guest_signup extends AppCompatActivity {
         email_guest = findViewById(R.id.email_guest);
         password_guest = findViewById(R.id.password_guest);
         login_button = findViewById(R.id.login_button);
-        signup_text = findViewById(R.id.signup_text);
+        signin_text = findViewById(R.id.signin_text);
         name_guest = findViewById(R.id.name_guest);
 
 
@@ -42,6 +42,13 @@ public class guest_signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createAccount();
+            }
+        });
+
+        signin_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),guest_login.class));
             }
         });
 

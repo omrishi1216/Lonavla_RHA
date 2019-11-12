@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(splashIntent);
                 finish();
             }
-        },500);
+        },1000);
     }
 
     private void not_intiated(){
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(splashIntent);
                 finish();
             }
-        },500);
+        },1000);
 
 
     }
