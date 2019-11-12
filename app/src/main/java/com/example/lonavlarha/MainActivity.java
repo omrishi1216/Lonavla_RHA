@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean isAppInitiated;
+
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = mAuth.getCurrentUser();
 
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
         },500);
 
-        isAppInitiated = true;
 
     }
 }
