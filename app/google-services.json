@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "364641316446",
+    "firebase_url": "https://lonavla-rha.firebaseio.com",
+    "project_id": "lonavla-rha",
+    "storage_bucket": "lonavla-rha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364641316446:android:1450bc11646d2c5973cecf",
+        "android_client_info": {
+          "package_name": "com.example.lonavlarha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364641316446-u8svhgcbfadp6m9hvlsaemnc9j3u744d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lonavlarha",
+            "certificate_hash": "6e45ba66b087044dcff778ded84b93784eb4ec1b"
+          }
+        },
+        {
+          "client_id": "364641316446-gqfpdo3li1v8840huflet01sh89th7fa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-RKUyDCXKMwZ-YMA10u4BEu4gxXUOIDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364641316446-gqfpdo3li1v8840huflet01sh89th7fa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
