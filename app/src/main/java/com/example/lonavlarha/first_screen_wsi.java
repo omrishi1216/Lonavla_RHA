@@ -44,7 +44,7 @@ public class first_screen_wsi extends AppCompatActivity {
         rho_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),rho_login.class));
+
             }
         });
     }
