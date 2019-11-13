@@ -4,27 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D5033C03"
+    android:background="#D50C440C"
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/app_logo"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:src="@drawable/logo"
-        android:id="@+id/app_logo"
         android:layout_centerInParent="true"
-        ></ImageView>
+        android:src="@drawable/logo">
+
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/robinhood_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_logo"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="ROBIN HOOD ARMY"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:textColor="#4BFA54"
-        android:text="ROBIN HOOD ARMY"
-        android:layout_below="@id/app_logo"
+        android:layout_below="@id/robinhood_title"
         android:layout_centerHorizontal="true"
-        android:layout_margin="50dp"
-        ></TextView>
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/my"
+        android:gravity="right"
+        android:text="SERVE THE HUNGRY CITIZENS"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="italic" />
+
 
 </RelativeLayout>
 
