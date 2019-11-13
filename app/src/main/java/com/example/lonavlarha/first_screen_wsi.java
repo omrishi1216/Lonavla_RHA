@@ -23,7 +23,7 @@ public class first_screen_wsi extends AppCompatActivity {
         setContentView(R.layout.activity_first_screen_wsi);
 
         guest_login =  findViewById(R.id.guest);
-        rho_login = findViewById(R.id.rho);
+
 
 
         ArrayList<MyModel> upperdata = fill_with_data();
@@ -41,12 +41,7 @@ public class first_screen_wsi extends AppCompatActivity {
             }
         });
 
-        rho_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 
     public ArrayList<MyModel> fill_with_data() {
