@@ -23,30 +23,38 @@ public class guest_login extends AppCompatActivity {
     EditText password_guest;
     Button login_button;
     TextView signup_text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_login);
 
 
-        email_guest = findViewById(R.id.email_guest);
-        password_guest = findViewById(R.id.password_guest);
+        email_guest = findViewById(R.id.email_guest_1);
+        password_guest = findViewById(R.id.password_guest_1);
         login_button = findViewById(R.id.login_button);
         signup_text = findViewById(R.id.signup_text);
 
+        email_guest.setText("");
+        password_guest.setText("");
 
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                singinUser();
+                if (email_guest.getText().toString().equals("") || password_guest.getText().toString().equals("")) {
+                    Toast.makeText(guest_login.this, "Email and Password are required!", Toast.LENGTH_LONG).show();
+                } else {
+                    singinUser();
+                }
             }
+
         });
 
         signup_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),guest_signup.class));
+                startActivity(new Intent(getApplicationContext(), guest_signup.class));
             }
         });
     }
@@ -69,8 +77,6 @@ public class guest_login extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
-
-                        // ...
                     }
                 });
     }

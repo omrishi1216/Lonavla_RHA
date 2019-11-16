@@ -15,7 +15,7 @@ public class first_screen_wsi extends AppCompatActivity {
 
     RecyclerView bigrecycler;
     TextView guest_login;
-    TextView rho_login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

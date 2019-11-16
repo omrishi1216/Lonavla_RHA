@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class guest_signup extends AppCompatActivity {
     EditText email_guest;
@@ -36,12 +38,21 @@ public class guest_signup extends AppCompatActivity {
         signin_text = findViewById(R.id.signin_text);
         name_guest = findViewById(R.id.name_guest);
 
+        email_guest.setText("");
+        password_guest.setText("");
+        name_guest.setText("");
+
 
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createAccount();
+
+                if (email_guest.getText().toString().equals("") || password_guest.getText().toString().equals("") || name_guest.getText().toString().equals("")) {
+                    Toast.makeText(guest_signup.this, "Some Information is missing!", Toast.LENGTH_LONG).show();
+                } else {
+                    createAccount();
+                }
             }
         });
 
@@ -65,8 +76,10 @@ public class guest_signup extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = guest_auth.getCurrentUser();
-                            Toast.makeText(guest_signup.this, "Succesfully Signed Up",
+                            DatabaseReference fbdb = FirebaseDatabase.getInstance().getReference().child("Users");
+                            Toast.makeText(guest_signup.this, "Successfully Signed Up",
                                     Toast.LENGTH_LONG).show();
+                            fbdb.child(email_guest.getText().toString()).setValue(name_guest.getText().toString());
                             Intent i = new Intent(getApplicationContext(), first_screen_si.class);
                             i.putExtra("User Name",name_guest.getText().toString() );
                             startActivity(i);
