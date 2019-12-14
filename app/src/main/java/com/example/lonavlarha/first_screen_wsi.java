@@ -16,6 +16,8 @@ public class first_screen_wsi extends AppCompatActivity {
     RecyclerView bigrecycler;
     TextView guest_login;
 
+    private static final int RC_SIGN_IN = 123;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,9 @@ public class first_screen_wsi extends AppCompatActivity {
         guest_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),guest_login.class));
+
+                startActivity(new Intent(getApplicationContext(),guest_signup.class));
+
             }
         });
 

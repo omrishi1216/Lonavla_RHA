@@ -5,6 +5,8 @@
     android:orientation="vertical">
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,7 +47,50 @@
         android:id="@+id/name_guest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
         android:layout_below="@+id/name"
+        android:layout_marginLeft="5dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/add1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_guest"
+        android:layout_centerVertical="true"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="Address Line 1"
+        android:textColor="#28D533"
+        android:textSize="26dp" />
+
+    <EditText
+        android:id="@+id/add1_guest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add1"
+        android:layout_marginLeft="5dp"
+        android:drawableLeft="@drawable/ic_home_black_24dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/add2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add1_guest"
+        android:layout_centerVertical="true"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="Address Line 2"
+        android:textColor="#28D533"
+        android:textSize="26dp" />
+
+    <EditText
+        android:id="@+id/add2_guest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add2"
+        android:drawableLeft="@drawable/ic_home_black_24dp"
         android:layout_marginLeft="5dp"
         android:textColor="#ffffff" />
 
@@ -54,7 +99,7 @@
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name_guest"
+        android:layout_below="@+id/add2_guest"
         android:layout_centerVertical="true"
         android:layout_marginVertical="10dp"
         android:layout_marginLeft="5dp"
@@ -69,9 +114,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone"
+        android:drawableLeft="@drawable/ic_local_phone_black_24dp"
         android:layout_marginLeft="5dp"
         android:inputType="phone"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
+
         android:textColor="#ffffff" />
 
 
@@ -93,6 +139,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:inputType="number"
         android:layout_below="@+id/password"
         android:layout_marginLeft="5dp"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
@@ -111,21 +158,5 @@
         android:text="Verify">
 
     </Button>
-
-
-    <TextView
-        android:id="@+id/signin_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_button"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:clickable="true"
-        android:text="Already have an Account, Sign In"
-        android:textColor="#B5FFFFFF">
-
-
-    </TextView>
-
 
 </RelativeLayout>

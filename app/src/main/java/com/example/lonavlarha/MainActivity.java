@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(currentUser == null){
-            not_intiated();
+            not_initiated();
         }else {
             initiated();
         }
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         },1000);
     }
 
-    private void not_intiated(){
+    private void not_initiated(){
 
         new Handler().postDelayed(new Runnable() {
             @Override

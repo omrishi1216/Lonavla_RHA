@@ -16,6 +16,13 @@
         >
     </item>
 
+    <item
+        android:title="About Us"
+        app:showAsAction="never"
+        android:id="@+id/about"
+        >
+    </item>
+
 
 
 </menu>
