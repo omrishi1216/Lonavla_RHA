@@ -158,14 +158,17 @@ public class guest_signup extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
 
-                            db = FirebaseDatabase.getInstance().getReference();
+                            db = FirebaseDatabase.getInstance().getReference().child("Users");
 
                             User user = new User();
                             user.setName(name_guest.getText().toString());
                             user.setAddress1(add1_guest.getText().toString());
                             user.setAddress2(add2_guest.getText().toString());
                             user.setPhone("+91" + phone_guest.getText().toString());
+                            user.setUserid(mAuth.getUid());
                             db.child("+91" + phone_guest.getText().toString()).setValue(user);
+                            //FirebaseUser cuser = mAuth.getCurrentUser();
+
 
 
                             Intent intent = new Intent(getApplicationContext(),first_screen_si.class);

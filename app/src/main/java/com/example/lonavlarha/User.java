@@ -2,7 +2,7 @@ package com.example.lonavlarha;
 
 public class User {
 
-    private String name, address1,address2,phone;
+    private String name, address1,address2,phone,userid;
 
     public User() {
 
@@ -10,6 +10,14 @@ public class User {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public void setPhone(String phone) {

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lonavlarha">
 
-    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <uses-feature
@@ -16,7 +15,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addition_screen"></activity>
+        <activity android:name=".About_Us_Page"
+            >
+        </activity>
+        <activity android:name=".settings_page"
+            >
+        </activity>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.lonavlarha.first_screen_si" />
+
+
         <activity android:name=".first_screen_si" />
         <activity android:name=".first_screen_wsi" />
         <activity android:name=".guest_signup" />

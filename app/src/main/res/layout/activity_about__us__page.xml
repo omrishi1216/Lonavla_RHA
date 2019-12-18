@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".first_screen_si">
+    tools:context=".About_Us_Page">
 
     <include layout="@layout/toolbar"
-        android:id="@+id/toolbar">
-    </include>
+        ></include>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="SEND"
-        />
+    /*
+    INCLUDE
+    - info about RHA
+    - a button at the bottom (developer info)
 
+    */
 </RelativeLayout>

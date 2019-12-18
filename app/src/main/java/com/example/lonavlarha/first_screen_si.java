@@ -28,7 +28,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class first_screen_si extends AppCompatActivity {
-
     FirebaseUser currentuser;
     DatabaseReference fbd;
     private static final int PERMISSION_REQUEST_CODE = 1;
@@ -40,15 +39,17 @@ public class first_screen_si extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         currentuser = mAuth.getCurrentUser();
         user = new User();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen_si);
         Intent i = getIntent();
 
 
 
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle(user.getName());
+        setTitle("Lonavla RHA");
 
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkPermission()) {
@@ -73,8 +74,8 @@ public class first_screen_si extends AppCompatActivity {
                         SmsManager smsManager = SmsManager.getDefault();
 
 //Send the SMS//
-                        //smsManager.sendTextMessage("8377972338", null, "Lonavla RHA Test Mssg", null, null);
-                        smsManager.sendTextMessage("9643959973", null, "Lonavla RHA Test Mssg", null, null);
+                        smsManager.sendTextMessage("+918377972338", null, "Lonavla RHA Test Mssg", null, null);
+                        smsManager.sendTextMessage("+919643959973", null, "Lonavla RHA Test Mssg", null, null);
                     } else {
                         Toast.makeText(first_screen_si.this, "Permission denied", Toast.LENGTH_SHORT).show();
                     }
@@ -94,7 +95,28 @@ public class first_screen_si extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
+
+                for(DataSnapshot usersnapshot : dataSnapshot.getChildren()){
+
+                    user = usersnapshot.getValue(User.class);
+                    if(user == null){
+                        user.setUserid("000");
+                        user.setPhone("+91 X");
+                        user.setAddress2("X");
+                        user.setAddress1("X");
+                        user.setName("!Default!");
+                        Toast.makeText(first_screen_si.this,"Unable to retrieve user info",Toast.LENGTH_LONG).show();
+                    }
+                    if (user !=null && user.getUserid().equals(currentuser.getUid())){
+                        break;
+                    }else {
+                        continue;
+                    }
+                    //tv.setText(user.getPhone());
+
+                }
+                return;
+
             }
 
             @Override
@@ -103,7 +125,7 @@ public class first_screen_si extends AppCompatActivity {
 
             }
         });
-        return "User";
+        return user.getName();
     }*/
 
     @Override
@@ -150,8 +172,10 @@ public class first_screen_si extends AppCompatActivity {
 
             case (R.id.settings):
 
-            case (R.id.about):
+                startActivity(new Intent(getApplicationContext(), settings_page.class));
 
+            case (R.id.about):
+                startActivity(new Intent(getApplicationContext(), About_Us_Page.class));
             default:
                 super.onOptionsItemSelected(item);
         }
