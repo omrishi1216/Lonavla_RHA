@@ -1,162 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/child_img3" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/child_img3" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.6"
+                android:background="#000000" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.6"
-        android:background="#000000" />
+            <TextView
+                android:id="@+id/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="25dp"
+                android:text="Sign Up"
+                android:textColor="#28D533"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sign_up"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="Name"
+                android:textColor="#28D533"
+                android:textSize="26dp" />
+
+            <EditText
+                android:id="@+id/name_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/add1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_guest"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="Address Line 1"
+                android:textColor="#28D533"
+                android:textSize="26dp" />
+
+            <EditText
+                android:id="@+id/add1_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add1"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_home_black_24dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/add2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add1_guest"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="Address Line 2"
+                android:textColor="#28D533"
+                android:textSize="26dp" />
+
+            <EditText
+                android:id="@+id/add2_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add2"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_home_black_24dp"
+                android:textColor="#ffffff" />
 
 
-    <TextView
-        android:id="@+id/sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginVertical="25dp"
-        android:text="Sign Up"
-        android:textColor="#28D533"
-        android:textSize="45dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sign_up"
-        android:layout_centerVertical="true"
-        android:layout_marginVertical="10dp"
-        android:layout_marginLeft="5dp"
-        android:text="Name"
-        android:textColor="#28D533"
-        android:textSize="26dp" />
-
-    <EditText
-        android:id="@+id/name_guest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:layout_below="@+id/name"
-        android:layout_marginLeft="5dp"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:id="@+id/add1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/name_guest"
-        android:layout_centerVertical="true"
-        android:layout_marginVertical="10dp"
-        android:layout_marginLeft="5dp"
-        android:text="Address Line 1"
-        android:textColor="#28D533"
-        android:textSize="26dp" />
-
-    <EditText
-        android:id="@+id/add1_guest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add1"
-        android:layout_marginLeft="5dp"
-        android:drawableLeft="@drawable/ic_home_black_24dp"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:id="@+id/add2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add1_guest"
-        android:layout_centerVertical="true"
-        android:layout_marginVertical="10dp"
-        android:layout_marginLeft="5dp"
-        android:text="Address Line 2"
-        android:textColor="#28D533"
-        android:textSize="26dp" />
-
-    <EditText
-        android:id="@+id/add2_guest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add2"
-        android:drawableLeft="@drawable/ic_home_black_24dp"
-        android:layout_marginLeft="5dp"
-        android:textColor="#ffffff" />
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add2_guest"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:inputType="phone"
+                android:text="Contact Number"
+                android:textColor="#28D533"
+                android:textSize="25dp" />
 
 
-    <TextView
-        android:id="@+id/phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add2_guest"
-        android:layout_centerVertical="true"
-        android:layout_marginVertical="10dp"
-        android:layout_marginLeft="5dp"
-        android:inputType="phone"
-        android:text="Contact Number"
-        android:textColor="#28D533"
-        android:textSize="25dp" />
+            <EditText
+                android:id="@+id/phone_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_local_phone_black_24dp"
+                android:inputType="phone"
+
+                android:textColor="#ffffff" />
 
 
-    <EditText
-        android:id="@+id/phone_guest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/phone"
-        android:drawableLeft="@drawable/ic_local_phone_black_24dp"
-        android:layout_marginLeft="5dp"
-        android:inputType="phone"
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone_guest"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="Verification Code"
+                android:textColor="#28D533"
+                android:textSize="26dp"
+                android:visibility="gone" />
 
-        android:textColor="#ffffff" />
+            <EditText
+                android:id="@+id/password_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/password"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:inputType="number"
+                android:textColor="#ffffff"
+                android:visibility="gone" />
 
 
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/phone_guest"
-        android:layout_centerVertical="true"
-        android:layout_marginVertical="10dp"
-        android:layout_marginLeft="5dp"
-        android:text="Verification Code"
-        android:visibility="gone"
-        android:textColor="#28D533"
-        android:textSize="26dp" />
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/password_guest"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="15dp"
+                android:background="@drawable/buttton_shape"
+                android:text="Verify">
 
-    <EditText
-        android:id="@+id/password_guest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:inputType="number"
-        android:layout_below="@+id/password"
-        android:layout_marginLeft="5dp"
-        android:drawableLeft="@drawable/ic_lock_black_24dp"
-        android:textColor="#ffffff" />
+            </Button>
 
 
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password_guest"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="15dp"
-        android:background="@drawable/buttton_shape"
-        android:text="Verify">
-
-    </Button>
 
 </RelativeLayout>
+

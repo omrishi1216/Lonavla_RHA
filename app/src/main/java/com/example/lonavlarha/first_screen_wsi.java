@@ -58,10 +58,7 @@ public class first_screen_wsi extends AppCompatActivity {
         upperdata.add(new MyModel(R.drawable.rharmy_img));
         upperdata.add(new MyModel(R.drawable.rha_img4));
         upperdata.add(new MyModel(R.drawable.image1));
-
         upperdata.add(new MyModel(R.drawable.image3));
-        upperdata.add(new MyModel(R.drawable.rhascreen));
-
 
         return upperdata;
     }
