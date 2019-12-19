@@ -58,7 +58,8 @@
                 android:text="ABOUT US"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/green_button"/>
+                android:background="@drawable/green_button"
+                />
 
 
 
@@ -69,7 +70,9 @@
             android:layout_height="wrap_content"
             android:text="by Cipherror"
             android:gravity="center"
-            android:paddingTop="80dp"
+            android:clickable="true"
+            android:id="@+id/devDetails"
+
             ></TextView>
 
     </LinearLayout>

@@ -168,14 +168,18 @@ public class first_screen_si extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), first_screen_wsi.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
+
                 return true;
+
 
             case (R.id.settings):
 
                 startActivity(new Intent(getApplicationContext(), settings_page.class));
+                break;
 
             case (R.id.about):
-                startActivity(new Intent(getApplicationContext(), About_Us_Page.class));
+                startActivity(new Intent(getApplicationContext(),about_us_2.class));
+                break;
             default:
                 super.onOptionsItemSelected(item);
         }

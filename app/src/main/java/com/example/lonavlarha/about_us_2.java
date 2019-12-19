@@ -1,25 +1,28 @@
 package com.example.lonavlarha;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class About_Us_Page extends AppCompatActivity {
+public class about_us_2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about__us__page);
+        setContentView(R.layout.activity_about_us_2);
 
-        Button cause = findViewById(R.id.sign_up);
+        Button know =findViewById(R.id.know_more);
 
-        cause.setOnClickListener(new View.OnClickListener() {
+        know.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), guest_signup.class));
+                Intent website = new Intent(Intent.ACTION_VIEW, Uri.parse("https://robinhoodarmy.com/"));
+
+                startActivity(website);
             }
         });
     }
