@@ -12,24 +12,69 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/up"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_margin="10dp"
         android:orientation="horizontal"
         tools:listitem="@layout/upper_row" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <Button
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
             android:id="@+id/guest"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="SIGN UP"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/ic_users_group" />
+            android:background="@drawable/green_button"/>
 
 
-    </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:text="ABOUT US"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/green_button"/>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by Cipherror"
+            android:gravity="center"
+            android:paddingTop="80dp"
+            ></TextView>
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

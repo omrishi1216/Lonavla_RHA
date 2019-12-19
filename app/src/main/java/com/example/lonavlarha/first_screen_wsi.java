@@ -3,7 +3,7 @@ package com.example.lonavlarha;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class first_screen_wsi extends AppCompatActivity {
 
     RecyclerView bigrecycler;
-    TextView guest_login;
+    Button guest_signup;
+    Button about_us;
 
     private static final int RC_SIGN_IN = 123;
 
@@ -24,7 +25,8 @@ public class first_screen_wsi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen_wsi);
 
-        guest_login =  findViewById(R.id.guest);
+        guest_signup =  findViewById(R.id.guest);
+        about_us = findViewById(R.id.about);
 
 
 
@@ -36,12 +38,19 @@ public class first_screen_wsi extends AppCompatActivity {
         bigrecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
-        guest_login.setOnClickListener(new View.OnClickListener() {
+        guest_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(getApplicationContext(),guest_signup.class));
 
+            }
+        });
+
+        about_us.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), About_Us_Page.class));
             }
         });
 
