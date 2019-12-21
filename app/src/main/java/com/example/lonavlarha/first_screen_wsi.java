@@ -1,9 +1,11 @@
 package com.example.lonavlarha;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +18,7 @@ public class first_screen_wsi extends AppCompatActivity {
     RecyclerView bigrecycler;
     Button guest_signup;
     Button about_us;
+    TextView dev;
 
     private static final int RC_SIGN_IN = 123;
 
@@ -51,6 +54,16 @@ public class first_screen_wsi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), About_Us_Page.class));
+            }
+        });
+
+        dev = findViewById(R.id.devDetails);
+
+        dev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent devDet = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                startActivity(devDet);
             }
         });
 

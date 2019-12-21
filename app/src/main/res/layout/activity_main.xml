@@ -35,13 +35,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/robinhood_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="40dp"
         android:fontFamily="@font/my"
         android:gravity="right"
+        android:id="@+id/text"
         android:text="SERVE THE HUNGRY CITIZENS"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:gravity="center"
+        android:text="by CIPHERROR"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:fontFamily="@font/first_font"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        ></TextView>
+
 
 
 </RelativeLayout>

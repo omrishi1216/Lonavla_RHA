@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".developer_info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:id="@+id/dev_name"
+
+>    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/first_font"
+        android:text="Cipher"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="48dp"
+        android:textColor="#009688"
+        ></TextView>
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/first_font"
+            android:text="ROR"
+            android:layout_marginTop="20dp"
+            android:textSize="58dp"
+            android:textColor="#F44336"
+            ></TextView>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:layout_below="@+id/dev_name"
+        android:fontFamily="@font/first_font"
+        android:layout_margin="20dp"
+        android:text="Team Cipherror is a group of enthusiastic developers that provide service in the form of software developement. We are college students, based  in New Delhi, India, that are interested in software developement.
+                      We build android applications and will soon be coming into web developement too. Contact Us for small business and personal projects. We are sure you won't regret."
+        android:textColor="#03A9F4"
+        android:id="@+id/info"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cheers Team Cipherror"
+        android:layout_below="@+id/info"
+        android:layout_margin="20dp"
+        android:textColor="#03A9F4"
+        android:fontFamily="@font/first_font"
+        android:textSize="22dp"
+        android:id="@+id/cheers"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Official Email : teamcipherror@gmail.com"
+        android:layout_below="@+id/cheers"
+        android:id="@+id/mail"
+        android:clickable="true"
+        android:textColor="#2196F3"
+        ></TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mail"
+        android:background="@drawable/dev_btn"
+        android:layout_margin="20dp"
+        android:textColor="#ffffff"
+        android:id="@+id/contact_dev"
+        android:text="Contact Developers"
+        ></Button>
+
+
+</RelativeLayout>

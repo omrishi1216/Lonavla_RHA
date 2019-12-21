@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".About_Us_Page">
+    tools:context=".about_us_2">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/head"
-            android:fontFamily="@font/first_font"
-            android:text="ROBIN HOOD ARMY"
-            android:layout_margin="20dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="48dp"
-            android:textColor="#11EE1A"
-                ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/head"
+        android:fontFamily="@font/first_font"
+        android:text="ROBIN HOOD ARMY"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="48dp"
+        android:textColor="#11EE1A"
+        ></TextView>
 
-        <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="The Robin Hood Army is a volunteer based Zero funds organisation that works to get surplus food from restaurants to the less fortunate sections of society in cities across India and 12 other countries. The organisation consists of over 33,500 volunteers (approximately) in 150 cities, and have served food to over 16.7 million people so far.The volunteers people from all walks of life. The lesser fortunate sections who the organisation reaches out to include homeless families, orphanages, night shelters, homes for abandoned children, patients from public hospitals, etc"
@@ -30,14 +30,15 @@
         android:id="@+id/info"
         ></TextView>
 
-        <Button
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/info"
         android:background="@drawable/green_button"
         android:layout_margin="20dp"
-        android:id="@+id/sign_up"
-        android:text="CONTRIBUTE TO THE CAUSE"
+        android:id="@+id/know_more"
+        android:text="KNOW MORE ABOUT US"
         ></Button>
+
 
 </RelativeLayout>
