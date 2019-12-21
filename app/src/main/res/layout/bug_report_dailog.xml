@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="omrishi1216@gmail.com"
+        android:text="teamcipherror@gmail.com"
         android:textColor="#3F51B5"
         android:textSize="18dp"
         android:clickable="true"
@@ -21,6 +21,5 @@
         android:background="@drawable/ic_content_copy_black_24dp"
         android:id="@+id/copy_btn"
         ></Button>
-
 
 </LinearLayout>

@@ -167,6 +167,7 @@ public class first_screen_si extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 Intent i = new Intent(getApplicationContext(), first_screen_wsi.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Toast.makeText(first_screen_si.this, "Signed Out", Toast.LENGTH_LONG).show();
                 startActivity(i);
 
                 return true;

@@ -15,11 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".about_us_2"
-            android:parentActivityName=".first_screen_si"></activity>
-        <activity android:name=".About_Us_Page"></activity>
-        <activity android:name=".settings_page"
-            android:parentActivityName=".first_screen_si"></activity>
+        <activity android:name=".developer_info"></activity>
+        <activity android:name=".privacy_policy" />
+        <activity
+            android:name=".about_us_2"
+            android:parentActivityName=".first_screen_si" />
+        <activity android:name=".About_Us_Page" />
+        <activity
+            android:name=".settings_page"
+            android:parentActivityName=".first_screen_si" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

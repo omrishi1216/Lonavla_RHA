@@ -1,5 +1,6 @@
 package com.example.lonavlarha;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -22,7 +23,6 @@ public class settings_page extends AppCompatActivity {
         dev_info = findViewById(R.id.developer_details);
         privacy = findViewById(R.id.privacy_policy);
         tool = findViewById(R.id.toolbar_settings);
-
         setSupportActionBar(tool);
         setTitle("Settings");
 
@@ -43,6 +43,20 @@ public class settings_page extends AppCompatActivity {
                 bug_report_dailog bug_report = new bug_report_dailog();
                 bug_report.show(getSupportFragmentManager(),"BugReportDailog");
 
+            }
+        });
+
+        dev_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), developer_info.class));
+            }
+        });
+
+        privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), privacy_policy.class));
             }
         });
 
