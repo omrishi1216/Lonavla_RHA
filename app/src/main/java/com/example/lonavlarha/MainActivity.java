@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splashIntent = new Intent(MainActivity.this,first_screen_wsi.class);
+                Intent splashIntent = new Intent(MainActivity.this,first_screen_si.class);
                 startActivity(splashIntent);
                 finish();
             }

@@ -11,6 +11,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,6 +38,11 @@ public class first_screen_si extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 1;
     User user;
 
+
+    Spinner spinner1, spinner2, spinner3;
+    EditText e1,e2,e3;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,12 +52,107 @@ public class first_screen_si extends AppCompatActivity {
         user = new User();
 
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen_si);
         Intent i = getIntent();
 
         FloatingActionButton fab = findViewById(R.id.button1);
+
+        String[] Food = {"Rice", "Daal", "Sabzi"};
+
+        final String[] Rice = {"Daal", "Sabzi"};
+        final String[] Daal = {"Rice", "Sabzi"};
+        final String[] Sabzi = {"Rice", "Daal"};
+
+        final String[] Rice_left = {"Rice"};
+        final String[] Daal_left = {"Daal"};
+        final String[] Sabzi_left = {"Sabzi"};
+
+
+        spinner1 = findViewById(R.id.spinner1);
+        ArrayAdapter a = new ArrayAdapter(this, R.layout.spinner_layout, Food);
+        a.setDropDownViewResource(R.layout.spinner_layout);
+        spinner1.setAdapter(a);
+
+        spinner2 = findViewById(R.id.spinner2);
+
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                switch (i) {
+
+                    case 0:
+                        ArrayAdapter one = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice);
+                        one.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner2.setAdapter(one);
+                        break;
+
+                    case 1:
+                        ArrayAdapter two = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Daal);
+                        two.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner2.setAdapter(two);
+                        break;
+
+                    case 2:
+                        ArrayAdapter three = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi);
+                        three.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner2.setAdapter(three);
+                        break;
+
+                }
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spinner3 = findViewById(R.id.spinner3);
+
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                switch (i) {
+
+                    case 0:
+                        ArrayAdapter xx = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi_left);
+                        xx.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner3.setAdapter(xx);
+                        break;
+
+                    case 1:
+                        ArrayAdapter yy = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Daal_left);
+                        yy.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner3.setAdapter(yy);
+                        break;
+
+                    case 3:
+                        ArrayAdapter zz = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice_left);
+                        zz.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner3.setAdapter(zz);
+                        break;
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        e1 = findViewById(R.id.e1);
+        e2 = findViewById(R.id.e2);
+        e3 = findViewById(R.id.e3);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +165,8 @@ public class first_screen_si extends AppCompatActivity {
 
 //Get the default SmsManager//
 
+                    String message_sent;
+                    message_sent = "We have" + "Rice" + e1.getText().toString() + "";
                     SmsManager smsManager = SmsManager.getDefault();
 
 //Send the SMS//
@@ -87,6 +193,22 @@ public class first_screen_si extends AppCompatActivity {
                 requestPermission();
             }
         }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //here
 
     }
 
@@ -129,7 +251,7 @@ public class first_screen_si extends AppCompatActivity {
         return user.getName();
     }*/
 
-    @Override
+    /*@Override
     protected void onStart() {
         fbd.addValueEventListener(new ValueEventListener() {
             @Override
@@ -149,8 +271,7 @@ public class first_screen_si extends AppCompatActivity {
             }
         });
         super.onStart();
-    }
-
+    } */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
