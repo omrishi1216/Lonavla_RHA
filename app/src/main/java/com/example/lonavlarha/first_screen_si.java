@@ -26,11 +26,8 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class first_screen_si extends AppCompatActivity {
     FirebaseUser currentuser;
@@ -39,12 +36,14 @@ public class first_screen_si extends AppCompatActivity {
     User user;
 
 
-    Spinner spinner1, spinner2, spinner3;
-    EditText e1,e2,e3;
+    Spinner spinner1, spinner2, spinner3,spinner4;
+    EditText e1,e2,e3,e4;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first_screen_si);
 
         fbd = FirebaseDatabase.getInstance().getReference();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -52,13 +51,11 @@ public class first_screen_si extends AppCompatActivity {
         user = new User();
 
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_screen_si);
-        Intent i = getIntent();
+
 
         FloatingActionButton fab = findViewById(R.id.button1);
 
-        String[] Food = {"Rice", "Daal", "Sabzi"};
+        final String[] Food = {"Rice", "Daal", "Sabzi", "Roti"};
 
         final String[] Rice = {"Daal", "Sabzi"};
         final String[] Daal = {"Rice", "Sabzi"};
@@ -69,10 +66,17 @@ public class first_screen_si extends AppCompatActivity {
         final String[] Sabzi_left = {"Sabzi"};
 
 
+
+
         spinner1 = findViewById(R.id.spinner1);
+
         ArrayAdapter a = new ArrayAdapter(this, R.layout.spinner_layout, Food);
         a.setDropDownViewResource(R.layout.spinner_layout);
         spinner1.setAdapter(a);
+        final String[] food2 = {"", "", ""} ;
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Lonavla RHA");
 
         spinner2 = findViewById(R.id.spinner2);
 
@@ -80,7 +84,22 @@ public class first_screen_si extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                switch (i) {
+                 int j =0;
+
+                for(int counter=0; counter<4; counter++){
+
+                    if(!(counter == i)){
+                        food2[j] = Food[counter];
+                        j++;
+                    }
+                }
+
+                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout,food2);
+                qq.setDropDownViewResource(R.layout.spinner_layout);
+                spinner2.setAdapter(qq);
+
+
+                /*switch (i) {
 
                     case 0:
                         ArrayAdapter one = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice);
@@ -100,7 +119,7 @@ public class first_screen_si extends AppCompatActivity {
                         spinner2.setAdapter(three);
                         break;
 
-                }
+                }*/
 
 
             }
@@ -112,13 +131,27 @@ public class first_screen_si extends AppCompatActivity {
         });
 
         spinner3 = findViewById(R.id.spinner3);
-
+        final String[] food3 = {"", ""} ;
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                 int j =0;
 
-                switch (i) {
+                for(int counter=0; counter<3; counter++){
+
+                    if(!(counter == i)){
+                        food3[j] = food2[counter];
+                        j++;
+                    }
+                }
+
+                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout,food3);
+                qq.setDropDownViewResource(R.layout.spinner_layout);
+                spinner3.setAdapter(qq);
+
+
+                /*switch (i) {
 
                     case 0:
                         ArrayAdapter xx = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi_left);
@@ -132,13 +165,64 @@ public class first_screen_si extends AppCompatActivity {
                         spinner3.setAdapter(yy);
                         break;
 
-                    case 3:
+                    case 2:
                         ArrayAdapter zz = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice_left);
                         zz.setDropDownViewResource(R.layout.spinner_layout);
                         spinner3.setAdapter(zz);
                         break;
 
+                }*/
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spinner4 = findViewById(R.id.spinner4);
+        final String[] food4 = {""} ;
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                int j =0;
+
+                for(int counter=0; counter<2; counter++){
+
+                    if(!(counter == i)){
+                        food4[j] = food3[counter];
+                        j++;
+                    }
                 }
+
+                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout,food4);
+                qq.setDropDownViewResource(R.layout.spinner_layout);
+                spinner4.setAdapter(qq);
+
+
+                /*switch (i) {
+
+                    case 0:
+                        ArrayAdapter xx = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi_left);
+                        xx.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner3.setAdapter(xx);
+                        break;
+
+                    case 1:
+                        ArrayAdapter yy = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Daal_left);
+                        yy.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner3.setAdapter(yy);
+                        break;
+
+                    case 2:
+                        ArrayAdapter zz = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice_left);
+                        zz.setDropDownViewResource(R.layout.spinner_layout);
+                        spinner3.setAdapter(zz);
+                        break;
+
+                }*/
 
             }
 
@@ -182,9 +266,7 @@ public class first_screen_si extends AppCompatActivity {
         });
 
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        setTitle("Lonavla RHA");
+
 
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkPermission()) {
