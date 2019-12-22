@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,37 +9,27 @@
     tools:context=".MainActivity">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/up"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        tools:listitem="@layout/upper_row" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
-            android:id="@+id/guest"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            android:text="SIGN UP"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/green_button"/>
-
+                android:id="@+id/guest_wsi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/green_button"
+                android:gravity="center"
+                android:text="SIGN UP" />
 
 
         </LinearLayout>
@@ -47,40 +37,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/about"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_margin="20dp"
-                android:text="ABOUT US"
-                android:gravity="center"
                 android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
                 android:background="@drawable/green_button"
-                />
-
+                android:gravity="center"
+                android:text="ABOUT US" />
 
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/devDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="by Cipherror"
-            android:gravity="center"
             android:clickable="true"
-            android:id="@+id/devDetails"
+            android:gravity="center"
+            android:text="by Cipherror">
 
-            ></TextView>
+        </TextView>
+
 
     </LinearLayout>
 
 
-
-
 </LinearLayout>
+
+
 
 
 
