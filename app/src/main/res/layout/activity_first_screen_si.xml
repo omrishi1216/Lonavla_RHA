@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".first_screen_si">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"></include>
+
 
 
     <RelativeLayout
@@ -16,9 +14,9 @@
         android:layout_height="match_parent">
 
         //Main Content
-
-
-
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"></include>
 
 
     </RelativeLayout>
@@ -33,5 +31,6 @@
         android:backgroundTint="#11EE1A"
         android:elevation="6dp"
         android:src="@drawable/ic_send_black_24dp"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

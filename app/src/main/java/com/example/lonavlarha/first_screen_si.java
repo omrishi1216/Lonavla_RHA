@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,14 @@ public class first_screen_si extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         currentuser = mAuth.getCurrentUser();
         user = new User();
+        Button i1 = findViewById(R.id.i);
+
+        i1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen_si);
