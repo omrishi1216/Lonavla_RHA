@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +33,7 @@ public class first_screen_si extends AppCompatActivity {
     DatabaseReference fbd;
     private static final int PERMISSION_REQUEST_CODE = 1;
     User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,11 +42,38 @@ public class first_screen_si extends AppCompatActivity {
         currentuser = mAuth.getCurrentUser();
         user = new User();
 
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen_si);
         Intent i = getIntent();
 
+        FloatingActionButton fab = findViewById(R.id.button1);
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //String sms = smsText.getText().toString();
+                //String phoneNum = phoneNumber.getText().toString();
+                //if (!TextUtils.isEmpty(sms) && !TextUtils.isEmpty(phoneNum)) {
+                if (checkPermission()) {
+
+//Get the default SmsManager//
+
+                    SmsManager smsManager = SmsManager.getDefault();
+
+//Send the SMS//
+                    smsManager.sendTextMessage("+918377972338", null, "Lonavla RHA Test Mssg", null, null);
+                    smsManager.sendTextMessage("+919643959973", null, "Lonavla RHA Test Mssg", null, null);
+                    Toast.makeText(first_screen_si.this, "Information Sent Successfully!", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(first_screen_si.this, "Permission denied", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -58,34 +87,6 @@ public class first_screen_si extends AppCompatActivity {
                 requestPermission();
             }
         }
-
-
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //String sms = smsText.getText().toString();
-                //String phoneNum = phoneNumber.getText().toString();
-                //if (!TextUtils.isEmpty(sms) && !TextUtils.isEmpty(phoneNum)) {
-                    if (checkPermission()) {
-
-//Get the default SmsManager//
-
-                        SmsManager smsManager = SmsManager.getDefault();
-
-//Send the SMS//
-                        smsManager.sendTextMessage("+918377972338", null, "Lonavla RHA Test Mssg", null, null);
-                        smsManager.sendTextMessage("+919643959973", null, "Lonavla RHA Test Mssg", null, null);
-                    } else {
-                        Toast.makeText(first_screen_si.this, "Permission denied", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-            //}
-        });
-
-
-
 
     }
 
@@ -134,8 +135,8 @@ public class first_screen_si extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for(DataSnapshot userSnapshot : dataSnapshot.getChildren()){
-                    if(userSnapshot.getChildren().equals(currentuser.getPhoneNumber())) {
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    if (userSnapshot.getChildren().equals(currentuser.getPhoneNumber())) {
                         user = userSnapshot.getValue(User.class);
                     }
                 }
@@ -153,14 +154,14 @@ public class first_screen_si extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_first_screen,menu);
+        inflater.inflate(R.menu.menu_first_screen, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
 
             case (R.id.signout):
 
@@ -179,7 +180,7 @@ public class first_screen_si extends AppCompatActivity {
                 break;
 
             case (R.id.about):
-                startActivity(new Intent(getApplicationContext(),about_us_2.class));
+                startActivity(new Intent(getApplicationContext(), about_us_2.class));
                 break;
             default:
                 super.onOptionsItemSelected(item);

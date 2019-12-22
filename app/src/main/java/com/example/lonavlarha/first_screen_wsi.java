@@ -23,6 +23,7 @@ public class first_screen_wsi extends AppCompatActivity {
     private static final int RC_SIGN_IN = 123;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,6 @@ public class first_screen_wsi extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter(upperdata);
         bigrecycler.setAdapter(adapter);
         bigrecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
 
         guest_signup.setOnClickListener(new View.OnClickListener() {
             @Override
