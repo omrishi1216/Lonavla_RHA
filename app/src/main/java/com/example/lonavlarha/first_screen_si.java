@@ -190,6 +190,11 @@ public class first_screen_si extends AppCompatActivity {
 
                         smsManager.sendTextMessage("+918377972338", null, message_sent, null, null);
                         smsManager.sendTextMessage("+919643959973", null, message_sent, null, null);
+                        e1.setText("");
+                        e2.setText("");
+                        name_e5.setText("");
+                        e3.setText("");
+                        e4.setText("");
                         Toast.makeText(first_screen_si.this, "Information Sent Successfully!", Toast.LENGTH_LONG).show();
                     } else {
                         if((name_e5.getText().toString().equals(""))){
