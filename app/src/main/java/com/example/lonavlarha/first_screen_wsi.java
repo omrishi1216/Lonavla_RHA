@@ -73,6 +73,8 @@ public class first_screen_wsi extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
 
+
+
     }
 
 
@@ -104,5 +106,7 @@ public class first_screen_wsi extends AppCompatActivity {
             return mTitleList.get(position);
         }
     }
+
+
 
 }

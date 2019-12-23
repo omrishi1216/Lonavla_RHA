@@ -60,8 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:gravity="right"
-                android:hint="(in Kgs/no.)"
+                android:gravity="center"
+                android:hint="(in Kgs/no./ltr)"
                 android:inputType="number"
                 android:textColor="#000000" />
 
@@ -83,8 +83,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:gravity="right"
-                android:hint="(in Kgs/no.)"
+                android:gravity="center"
+                android:hint="(in Kgs/no./ltr)"
                 android:inputType="number"
                 android:textColor="#000000" />
 
@@ -106,8 +106,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="3"
-                android:gravity="right"
-                android:hint="(in Kgs/no.)"
+                android:gravity="center"
+                android:hint="(in Kgs/no./ltr)"
                 android:inputType="number"
                 android:textColor="#000000" />
 
@@ -129,9 +129,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="3"
-                android:gravity="right"
-                android:hint="(in Kgs/no.)"
+                android:gravity="center"
+                android:hint="(in Kgs/no./ltr)"
                 android:inputType="number"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Name of Sender :"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#53E639"
+                android:layout_weight="3"
+                android:fontFamily="@font/first_font"/>
+
+            <EditText
+                android:id="@+id/name_e5"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:layout_margin="5dp"
                 android:textColor="#000000" />
 
         </LinearLayout>

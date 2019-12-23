@@ -30,14 +30,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class first_screen_si extends AppCompatActivity {
+
     FirebaseUser currentuser;
     DatabaseReference fbd;
     private static final int PERMISSION_REQUEST_CODE = 1;
     User user;
 
 
-    Spinner spinner1, spinner2, spinner3,spinner4;
-    EditText e1,e2,e3,e4;
+    Spinner spinner1, spinner2, spinner3, spinner4;
+    EditText e1, e2, e3, e4, name_e5;
 
 
     @Override
@@ -51,29 +52,15 @@ public class first_screen_si extends AppCompatActivity {
         user = new User();
 
 
-
-
         FloatingActionButton fab = findViewById(R.id.button1);
 
         final String[] Food = {"Rice", "Daal", "Sabzi", "Roti"};
-
-        final String[] Rice = {"Daal", "Sabzi"};
-        final String[] Daal = {"Rice", "Sabzi"};
-        final String[] Sabzi = {"Rice", "Daal"};
-
-        final String[] Rice_left = {"Rice"};
-        final String[] Daal_left = {"Daal"};
-        final String[] Sabzi_left = {"Sabzi"};
-
-
-
-
         spinner1 = findViewById(R.id.spinner1);
 
         ArrayAdapter a = new ArrayAdapter(this, R.layout.spinner_layout, Food);
         a.setDropDownViewResource(R.layout.spinner_layout);
         spinner1.setAdapter(a);
-        final String[] food2 = {"", "", ""} ;
+        final String[] food2 = {"", "", ""};
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Lonavla RHA");
@@ -84,42 +71,19 @@ public class first_screen_si extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                 int j =0;
+                int j = 0;
 
-                for(int counter=0; counter<4; counter++){
+                for (int counter = 0; counter < 4; counter++) {
 
-                    if(!(counter == i)){
+                    if (!(counter == i)) {
                         food2[j] = Food[counter];
                         j++;
                     }
                 }
 
-                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout,food2);
+                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, food2);
                 qq.setDropDownViewResource(R.layout.spinner_layout);
                 spinner2.setAdapter(qq);
-
-
-                /*switch (i) {
-
-                    case 0:
-                        ArrayAdapter one = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice);
-                        one.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner2.setAdapter(one);
-                        break;
-
-                    case 1:
-                        ArrayAdapter two = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Daal);
-                        two.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner2.setAdapter(two);
-                        break;
-
-                    case 2:
-                        ArrayAdapter three = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi);
-                        three.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner2.setAdapter(three);
-                        break;
-
-                }*/
 
 
             }
@@ -131,47 +95,25 @@ public class first_screen_si extends AppCompatActivity {
         });
 
         spinner3 = findViewById(R.id.spinner3);
-        final String[] food3 = {"", ""} ;
+        final String[] food3 = {"", ""};
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                 int j =0;
+                int j = 0;
 
-                for(int counter=0; counter<3; counter++){
+                for (int counter = 0; counter < 3; counter++) {
 
-                    if(!(counter == i)){
+                    if (!(counter == i)) {
                         food3[j] = food2[counter];
                         j++;
                     }
                 }
 
-                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout,food3);
+                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, food3);
                 qq.setDropDownViewResource(R.layout.spinner_layout);
                 spinner3.setAdapter(qq);
 
-
-                /*switch (i) {
-
-                    case 0:
-                        ArrayAdapter xx = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi_left);
-                        xx.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner3.setAdapter(xx);
-                        break;
-
-                    case 1:
-                        ArrayAdapter yy = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Daal_left);
-                        yy.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner3.setAdapter(yy);
-                        break;
-
-                    case 2:
-                        ArrayAdapter zz = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice_left);
-                        zz.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner3.setAdapter(zz);
-                        break;
-
-                }*/
 
             }
 
@@ -182,47 +124,25 @@ public class first_screen_si extends AppCompatActivity {
         });
 
         spinner4 = findViewById(R.id.spinner4);
-        final String[] food4 = {""} ;
+        final String[] food4 = {""};
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                int j =0;
+                int j = 0;
 
-                for(int counter=0; counter<2; counter++){
+                for (int counter = 0; counter < 2; counter++) {
 
-                    if(!(counter == i)){
+                    if (!(counter == i)) {
                         food4[j] = food3[counter];
                         j++;
                     }
                 }
 
-                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout,food4);
+                ArrayAdapter qq = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, food4);
                 qq.setDropDownViewResource(R.layout.spinner_layout);
                 spinner4.setAdapter(qq);
 
-
-                /*switch (i) {
-
-                    case 0:
-                        ArrayAdapter xx = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Sabzi_left);
-                        xx.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner3.setAdapter(xx);
-                        break;
-
-                    case 1:
-                        ArrayAdapter yy = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Daal_left);
-                        yy.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner3.setAdapter(yy);
-                        break;
-
-                    case 2:
-                        ArrayAdapter zz = new ArrayAdapter(first_screen_si.this, R.layout.spinner_layout, Rice_left);
-                        zz.setDropDownViewResource(R.layout.spinner_layout);
-                        spinner3.setAdapter(zz);
-                        break;
-
-                }*/
 
             }
 
@@ -236,8 +156,15 @@ public class first_screen_si extends AppCompatActivity {
         e1 = findViewById(R.id.e1);
         e2 = findViewById(R.id.e2);
         e3 = findViewById(R.id.e3);
+        e4 = findViewById(R.id.e4);
+        name_e5 = findViewById(R.id.name_e5);
 
 
+        e1.setText("");
+        e2.setText("");
+        name_e5.setText("");
+        e3.setText("");
+        e4.setText("");
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -249,14 +176,34 @@ public class first_screen_si extends AppCompatActivity {
 
 //Get the default SmsManager//
 
-                    String message_sent;
-                    message_sent = "We have" + "Rice" + e1.getText().toString() + "";
-                    SmsManager smsManager = SmsManager.getDefault();
+                    String message_sent = "";
+                    if (!(name_e5.getText().toString().equals("")) && !e1.getText().toString().equals("")) {
+                        SmsManager smsManager = SmsManager.getDefault();
+                        message_sent = "From " + name_e5.getText().toString()  + ":";
+                        message_sent = message_sent + "\nWe have " + spinner1.getSelectedItem().toString() + " " + e1.getText().toString() + " (kg/no./ltr)";
+                        if (!e2.getText().toString().equals(""))
+                            message_sent = message_sent + "\nWe have " + spinner2.getSelectedItem().toString() + " " + e2.getText().toString() + " (kg/no./ltr)";
+                        if (!e3.getText().toString().equals(""))
+                            message_sent = message_sent + "\nWe have " + spinner3.getSelectedItem().toString() + " " + e3.getText().toString() + " (kg/no./ltr)";
+                        if (!e4.getText().toString().equals(""))
+                            message_sent = message_sent + "\nWe have " + spinner4.getSelectedItem().toString() + " " + e4.getText().toString() + " (kg/no./ltr)";
+
+                        smsManager.sendTextMessage("+918377972338", null, message_sent, null, null);
+                        smsManager.sendTextMessage("+919643959973", null, message_sent, null, null);
+                        Toast.makeText(first_screen_si.this, "Information Sent Successfully!", Toast.LENGTH_LONG).show();
+                    } else {
+                        if((name_e5.getText().toString().equals(""))){
+                            name_e5.setError("Required!");
+                        }
+                        if (e1.getText().toString().equals("")){
+                            e1.setError("At least One Item Required!");
+                        }
+
+                    }
+
 
 //Send the SMS//
-                    smsManager.sendTextMessage("+918377972338", null, "Lonavla RHA Test Mssg", null, null);
-                    smsManager.sendTextMessage("+919643959973", null, "Lonavla RHA Test Mssg", null, null);
-                    Toast.makeText(first_screen_si.this, "Information Sent Successfully!", Toast.LENGTH_LONG).show();
+
                 } else {
                     Toast.makeText(first_screen_si.this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
@@ -264,8 +211,6 @@ public class first_screen_si extends AppCompatActivity {
 
             }
         });
-
-
 
 
         if (Build.VERSION.SDK_INT >= 23) {
@@ -279,81 +224,10 @@ public class first_screen_si extends AppCompatActivity {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-
-
-
-
-
-
-
         //here
 
     }
 
-    /*private String username() {
-        fbd.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-
-                for(DataSnapshot usersnapshot : dataSnapshot.getChildren()){
-
-                    user = usersnapshot.getValue(User.class);
-                    if(user == null){
-                        user.setUserid("000");
-                        user.setPhone("+91 X");
-                        user.setAddress2("X");
-                        user.setAddress1("X");
-                        user.setName("!Default!");
-                        Toast.makeText(first_screen_si.this,"Unable to retrieve user info",Toast.LENGTH_LONG).show();
-                    }
-                    if (user !=null && user.getUserid().equals(currentuser.getUid())){
-                        break;
-                    }else {
-                        continue;
-                    }
-                    //tv.setText(user.getPhone());
-
-                }
-                return;
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-
-            }
-        });
-        return user.getName();
-    }*/
-
-    /*@Override
-    protected void onStart() {
-        fbd.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    if (userSnapshot.getChildren().equals(currentuser.getPhoneNumber())) {
-                        user = userSnapshot.getValue(User.class);
-                    }
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        super.onStart();
-    } */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

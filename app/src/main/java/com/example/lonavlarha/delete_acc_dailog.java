@@ -31,21 +31,6 @@ public class delete_acc_dailog extends AppCompatDialogFragment {
                         Toast.makeText(getContext(), "Account Deleted Successfully", Toast.LENGTH_LONG).show();
                         startActivity(i);
 
-                        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                        /*user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    Intent deleted = new Intent(getContext(),first_screen_wsi.class);
-                                    deleted.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    Toast.makeText(getContext(), "Account Deleted Successfully", Toast.LENGTH_LONG).show();
-                                    startActivity(deleted);
-                                }else {
-                                    Toast.makeText(getContext(), "Account couldn't be deleted due to some error!", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });*/
                     }
                 });
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
