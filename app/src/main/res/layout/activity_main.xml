@@ -1,69 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo">
+        android:src="@drawable/logorha">
 
     </ImageView>
-
-
-    <TextView
-        android:id="@+id/robinhood_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/app_logo"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="ROBIN HOOD ARMY"
-        android:textColor="#11EE1A"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/robinhood_title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="40dp"
-        android:fontFamily="@font/my"
-        android:gravity="right"
-        android:id="@+id/text"
-        android:text="SERVE THE HUNGRY CITIZENS"
-        android:textColor="#11EE1A"
-        android:textSize="20dp"
-        android:textStyle="italic" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text"
-        android:gravity="center"
-        android:text="by CIPHERROR"
-        android:textSize="30dp"
-        android:textColor="#000000"
         android:fontFamily="@font/first_font"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        ></TextView>
+        android:text="SERVE HUNGRY CITIZENS"
+        android:textColor="#5DBB63"
+        android:textSize="25dp" />
 
 
-
-</RelativeLayout>
-
-
-
-
-
-
+</LinearLayout>
 
