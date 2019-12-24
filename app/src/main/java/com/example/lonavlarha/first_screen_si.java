@@ -38,7 +38,7 @@ public class first_screen_si extends AppCompatActivity {
 
 
     Spinner spinner1, spinner2, spinner3, spinner4;
-    EditText e1, e2, e3, e4, name_e5;
+    EditText e1, e2, e3, e4, name_e5,e5;
 
 
     @Override
@@ -158,6 +158,7 @@ public class first_screen_si extends AppCompatActivity {
         e3 = findViewById(R.id.e3);
         e4 = findViewById(R.id.e4);
         name_e5 = findViewById(R.id.name_e5);
+        e5 = findViewById(R.id.e6);
 
 
         e1.setText("");
@@ -182,11 +183,13 @@ public class first_screen_si extends AppCompatActivity {
                         message_sent = "From " + name_e5.getText().toString()  + ":";
                         message_sent = message_sent + "\nWe have " + spinner1.getSelectedItem().toString() + " " + e1.getText().toString() + " (kg/no./ltr)";
                         if (!e2.getText().toString().equals(""))
-                            message_sent = message_sent + "\nWe have " + spinner2.getSelectedItem().toString() + " " + e2.getText().toString() + " (kg/no./ltr)";
+                            message_sent = message_sent + "\n" + spinner2.getSelectedItem().toString() + " " + e2.getText().toString() + " (kg/no./ltr)";
                         if (!e3.getText().toString().equals(""))
-                            message_sent = message_sent + "\nWe have " + spinner3.getSelectedItem().toString() + " " + e3.getText().toString() + " (kg/no./ltr)";
+                            message_sent = message_sent + "\n" + spinner3.getSelectedItem().toString() + " " + e3.getText().toString() + " (kg/no./ltr)";
                         if (!e4.getText().toString().equals(""))
-                            message_sent = message_sent + "\nWe have " + spinner4.getSelectedItem().toString() + " " + e4.getText().toString() + " (kg/no./ltr)";
+                            message_sent = message_sent + "\n" + spinner4.getSelectedItem().toString() + " " + e4.getText().toString() + " (kg/no./ltr)";
+                        if (!e5.getText().toString().equals(""))
+                            message_sent = message_sent + "\nAnd " + e5.getText().toString();
 
                         smsManager.sendTextMessage("+918377972338", null, message_sent, null, null);
                         smsManager.sendTextMessage("+919643959973", null, message_sent, null, null);

@@ -10,7 +10,7 @@
         android:scaleType="centerCrop"
         android:layout_height="@dimen/view_pager_scale_height"
         android:adjustViewBounds="true"
-        android:src="@drawable/rha_img" />
+        android:src="@drawable/rha_img2" />
 
 
 </LinearLayout>
